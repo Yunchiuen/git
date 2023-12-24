@@ -1,3 +1,93 @@
 ![图片alt](./git-workflow.png)
 
 [圖片連接](https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/)
+
+初始化一個 Git 倉庫
+git init
+
+GIT - 解決中文亂碼的問題 https://dotblogs.com.tw/h20/2018/06/22/111411
+git config --global core.quotepath false
+
+git status 
+工作區已修改未上傳
+如果以上傳到暫存區是綠色字
+在工作區是紅色字
+
+git add -A
+將工作區所有檔案上傳到暫存區
+
+git add 檔案絕對路徑1 檔案絕對路徑2 ...
+指定工作區檔案上傳到暫存區
+
+git rm --cached 檔案絕對路徑1 檔案絕對路徑2 ...
+刪除暫存區檔案，工作區檔案還會存在
+
+git reset HEAD -- .
+暫存區中的所有檔案取消暫存，使它們回到工作區的狀態。
+這僅僅是取消了將檔案加入下一次提交的準備狀態，而不會修改工作區的實際檔案內容。
+
+git checkout -- .
+將最後一次暫存區所有檔案的內容還原到工作區。
+請謹慎使用這些指令，因為它們會修改你的工作區和暫存區。
+
+git commit -m "上傳訊息"
+將暫存區所有檔案上傳到本地儲存庫
+
+git commit -m "上傳訊息" 檔案絕對路徑1 檔案絕對路徑2 ...
+指定暫存區檔案上傳到本地儲存庫
+
+git reflog
+查詢版本訊息
+
+git log
+查詢版本詳細訊息
+
+git reset --hard 版本號
+版本穿梭 版本號可以透過git reflog查詢需要跳到的版本
+
+git push -u 遠端檔案庫 遠端分支名
+-u 以追蹤在本地儲存庫
+將本地儲存庫推送到(遠端檔案庫origin) 的 遠端分支
+
+git remote -v
+可以檢視你已經設定好的遠端檔案庫
+
+git remote add 別名 https
+創建遠端檔案庫別名，創建好會有兩個可以(fetch)拉取與(push)推送
+
+git clone https
+下載別人的代碼
+
+git branch -a 查詢所有分支 
+git branch -r 查詢雲端分支 
+git branch -v 查詢當前分支 
+git branch 查詢本地分支 
+
+git branch 本地分支名(自己取名) 
+已當前分支開新分支
+
+git switch 分支名 
+切換本地分支
+
+git merge 分支名
+合併分支 在當前分支合併其他分支
+
+合併分支失敗
+VIM 檔案絕對路徑 
+進入衝突檔案進行修改，按i開始修改，刪除不需要的部分後esc :wq
+
+cat 檔案絕對路徑 
+可查詢修改的檔案
+
+確認沒問題以後，檔案還需上傳至暫存區與本地儲存庫
+
+git branch -d 分支名 
+刪除本地分支
+
+
+git checkout -b 本地分支名(自己取名) (遠端存儲庫origin)/遠端分支名 
+創建一個新的本地分支，並將其連接到遠端分支。
+
+
+
+
