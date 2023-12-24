@@ -50,6 +50,9 @@ git remote add 別名 https
 git push 遠端檔案庫 遠端分支名
 將本地儲存庫推送到(遠端檔案庫別名) 的 遠端分支
 
+git pull 遠端檔案庫 遠端分支名
+從遠端檔案庫拉取檔案
+
 git clone https
 下載別人的代碼
 
